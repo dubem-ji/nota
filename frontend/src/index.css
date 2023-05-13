@@ -1,0 +1,36 @@
+/* #Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800&display=swap');
+
+
+/* #Root Variables */
+:root {
+    --color-success: #42ba96;
+    --color-danger: #DC3545;
+    --color-info: #f3e36f;
+    --color-black: #000000;
+    --color-black-variant: #353333;
+    --color-white: #ffffff;
+    --color-white-variant: #d3cccc;
+
+    --card-border-radius: 2rem;
+
+    --borer-radius-1: 0.4rem;
+    --borer-radius-2: 0.8rem;
+    --borer-radius-3: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+}
