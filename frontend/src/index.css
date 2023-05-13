@@ -1,5 +1,6 @@
 /* #Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
 
 
 /* #Root Variables */
@@ -7,10 +8,10 @@
     --color-success: #42ba96;
     --color-danger: #DC3545;
     --color-info: #f3e36f;
-    --color-black: #000000;
+    --color-black: #060606;
     --color-black-variant: #353333;
     --color-white: #ffffff;
-    --color-white-variant: #d3cccc;
+    --color-white-variant: #dcdcdc;
 
     --card-border-radius: 2rem;
 
@@ -23,6 +24,22 @@
 
     --box-shadow: 0 2rem 3rem var(--color-light);
 }
+h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+h2 {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+h3 {
+    font-size: 1rem;
+    font-weight: 500;
+}
+h4 {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
 
 
 *{
@@ -32,5 +49,38 @@
 }
 
 body {
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    background: var(--color-black);
+    color: var(--color-white);
+}
+
+/* #Header */
+.header {
+    border-bottom: 1px solid var(--color-black-variant);
+    padding: 0.5rem 2rem;
+}
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header .container .profile{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+.header .container .profile .pic {
+    background: #ffffff;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+}
+
+/* #Notes */
+.notes{
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+.notes .sidebar{
+    border-right: 1px solid var(--color-black-variant);
 }
