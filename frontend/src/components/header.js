@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import Createnote from './Notes/createnote';
 
 const Header = () => {
     return (
@@ -8,6 +9,7 @@ const Header = () => {
                     <h3>nota</h3>
                 </div>
                 <div className="profile">
+                    <Createnote />
                     <div className="pic">
 
                     </div>
