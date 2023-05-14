@@ -1,20 +1,20 @@
 import React from 'react';
 import Note from './note';
 
-const Notes = () => {
+const Notes = ({toggleShowNoteInput, togglesShowConfirm}) => {
     return (
         <>
-            <Note />
-            <Note />
-            <Note />
-            <Note />
-            <Note />
-            <Note />
-            <Note />
-            <Note />
-            <Note />
-            <Note />
-            <Note />
+            <Note toggleShowNoteInput={ toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm}/>
+            <Note toggleShowNoteInput={ toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm}/>
+            <Note toggleShowNoteInput={ toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm}/>
+            <Note toggleShowNoteInput={ toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm}/>
+            <Note toggleShowNoteInput={ toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm}/>
+            <Note toggleShowNoteInput={ toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm}/>
+            <Note toggleShowNoteInput={ toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm}/>
+            <Note toggleShowNoteInput={ toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm}/>
+            <Note toggleShowNoteInput={ toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm}/>
+            <Note toggleShowNoteInput={ toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm}/>
+            <Note toggleShowNoteInput={ toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm}/>
         </>
     );
 };

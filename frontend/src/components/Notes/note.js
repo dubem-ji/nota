@@ -5,7 +5,7 @@ import FolderIcon from '@mui/icons-material/Folder';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const Note = () => {
+const Note = ({ toggleShowNoteInput, togglesShowConfirm}) => {
   return (
     <div className='note'>
       <div className="note-content">
@@ -27,8 +27,16 @@ const Note = () => {
           <h5>Personal</h5>
         </div>
         <div className="note-btns">
-          <BorderColorIcon sx={{fontSize:'1rem', cursor: 'pointer'}}/>
-          <DeleteIcon sx={{fontSize:'1rem', cursor: 'pointer'}}/>
+          <div onClick={
+            () => toggleShowNoteInput()
+          }>
+            <BorderColorIcon sx={{fontSize:'1rem', cursor: 'pointer'}}/>
+          </div>
+          <div onClick={
+            () => togglesShowConfirm()
+          }>
+            <DeleteIcon sx={{fontSize:'1rem', cursor: 'pointer'}}/>
+          </div>
         </div>
       </div>
     </div>
