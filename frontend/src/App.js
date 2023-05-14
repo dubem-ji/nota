@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "./components/header";
-import Notes from "./components/Notes";
+import Main from "./components/Main/Main";
 
 function App() {
     return (
-        <>
+        <div className="app">
             <Header />
-            <Notes />
-        </>
+            <Main />
+        </div>
     );
 };
 
