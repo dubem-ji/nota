@@ -50,8 +50,8 @@ h4 {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background: var(--color-black);
-    color: var(--color-white);
+    background: var(--color-white);
+    color: var(--color-black);
 }
 
 /* #Header */
@@ -70,7 +70,7 @@ body {
     align-items: center;
 }
 .header .container .profile .pic {
-    background: #ffffff;
+    background: var(--color-white-variant);
     border-radius: 50%;
     width: 2rem;
     height: 2rem;
