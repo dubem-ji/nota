@@ -1,20 +1,14 @@
 import React from 'react';
 import Note from './note';
 
-const Notes = ({toggleShowNoteInput, togglesShowConfirm}) => {
+const Notes = ({toggleShowNoteInput, togglesShowConfirm, notesData}) => {
     return (
         <>
-            <Note toggleShowNoteInput={ toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm}/>
-            <Note toggleShowNoteInput={ toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm}/>
-            <Note toggleShowNoteInput={ toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm}/>
-            <Note toggleShowNoteInput={ toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm}/>
-            <Note toggleShowNoteInput={ toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm}/>
-            <Note toggleShowNoteInput={ toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm}/>
-            <Note toggleShowNoteInput={ toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm}/>
-            <Note toggleShowNoteInput={ toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm}/>
-            <Note toggleShowNoteInput={ toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm}/>
-            <Note toggleShowNoteInput={ toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm}/>
-            <Note toggleShowNoteInput={ toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm}/>
+            {
+                notesData.map((note) => {
+                    return <Note key={note.id} toggleShowNoteInput={toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm} note={ note} />
+                })
+            }
         </>
     );
 };
