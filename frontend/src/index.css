@@ -191,6 +191,7 @@ body {
     display: grid;
     padding: 1rem;
     grid-template-columns: 24% 24% 24% 24%;
+    grid-template-rows: 30% 30% 30%;
     column-gap: 1%;
     overflow-y: scroll;
 }
@@ -256,6 +257,57 @@ body {
     align-items: center;
     gap: 0.2rem;
 }
+
+/* #NoteInput */
+.main .note-input {
+    padding: 1rem;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-rows: 15% 75% 8%;
+    row-gap: 1%;
+}
+.main .note-input::-webkit-scrollbar {
+    width: 4px;
+}
+
+.main .note-input::-webkit-scrollbar-track {
+    background: var(--color-black);
+}
+
+
+.main .note-input::-webkit-scrollbar-thumb {
+    background: var(--color-white);
+    border-radius: var(--borer-radius-3);
+}
+
+.main .note-input::-webkit-scrollbar-thumb:hover {
+    background: var(--color-white-variant);
+    cursor: pointer;
+}
+.main .note-input .input-text .quill{
+    height: 80%;
+}
+.main .note-input .input-text .quill::-webkit-scrollbar {
+    width: 4px;
+}
+
+.main .note-input .input-text .quill::-webkit-scrollbar-track {
+    background: var(--color-black);
+}
+
+
+.main .note-input .input-text .quill::-webkit-scrollbar-thumb {
+    background: var(--color-white);
+    border-radius: var(--borer-radius-3);
+}
+
+.main .note-input .input-text .quill::-webkit-scrollbar-thumb:hover {
+    background: var(--color-white-variant);
+    cursor: pointer;
+}
+
+
+/* #Media Query */
 @media only screen and (max-width: 1300px) {
     .main {
         display: grid;
