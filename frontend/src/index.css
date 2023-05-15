@@ -50,6 +50,9 @@ p {
     font-size: 0.65rem;
     font-weight: 500;
 }
+.hide{
+    display: none;
+}
 
 *{
     box-sizing: border-box;
@@ -117,6 +120,40 @@ body {
     color: var(--color-white);
     cursor: pointer;
 }
+
+/* #Folder Modal */
+.create-folder {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-folder .container {
+    position: fixed;
+    bottom: 0;
+    left: 50;
+    margin-top: 3rem;
+    padding: 1rem 3rem;
+    background: var(--color-black);
+    border-radius: var(--borer-radius-2);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.create-folder .container .folders .folder{
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
 /* #Header */
 .header {
     border-bottom: 1px solid var(--color-black-variant);
@@ -269,23 +306,53 @@ body {
 .main .note-input::-webkit-scrollbar {
     width: 4px;
 }
-
 .main .note-input::-webkit-scrollbar-track {
     background: var(--color-black);
 }
-
-
 .main .note-input::-webkit-scrollbar-thumb {
     background: var(--color-white);
     border-radius: var(--borer-radius-3);
 }
-
 .main .note-input::-webkit-scrollbar-thumb:hover {
     background: var(--color-white-variant);
     cursor: pointer;
 }
+.main .note-input .input-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.main .note-input .input-header input{
+    padding: 0.5rem;
+    width: 20rem;
+    background: var(--color-black-variant-2);
+    color: var(--color-white);
+    border: none;
+}
+.main .note-input .input-header input{
+    border: none;
+}
+.main .note-input .input-header .folder {
+    display: flex;
+    gap: 0.2rem;
+    align-items: center;
+    cursor: pointer;
+}
+
 .main .note-input .input-text .quill{
     height: 80%;
+}
+.main .note-input .input-text .quill {
+    .ql-toolbar{
+        border: 1px solid var(--color-black-variant);
+        background: var(--color-black);
+        color: white;
+        opacity: 1;
+    }
+    .ql-container {
+        border: 1px solid var(--color-black-variant);
+        border: none;
+    }
 }
 .main .note-input .input-text .quill::-webkit-scrollbar {
     width: 4px;
