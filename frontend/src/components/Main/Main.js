@@ -3,7 +3,8 @@ import Sidebar from './Sidebar';
 import Notes from '../Notes/Notes';
 import NoteInput from '../Notes/NoteInput';
 
-const Main = ({showNotes, toggleShowNotes, showFolder, toggleShowFolder, showRecent, toggleShowRecent, showNoteInput, toggleShowNoteInput, togglesShowConfirm, notesData}) => {
+
+const Main = ({showNotes, toggleShowNotes, showFolder, toggleShowFolder, showRecent, toggleShowRecent, showNoteInput, toggleShowNoteInput, togglesShowConfirm, togglesShowCreateFolder, notesData}) => {
     
     return (
         <div className='main'>
@@ -27,7 +28,7 @@ const Main = ({showNotes, toggleShowNotes, showFolder, toggleShowFolder, showRec
             )}
             {showNoteInput && (
                 <div className="note-input">
-                    <NoteInput />
+                    <NoteInput togglesShowCreateFolder={togglesShowCreateFolder} />
                 </div>
             )}
         </div>
