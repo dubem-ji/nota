@@ -4,15 +4,17 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
 
-const NoteInput = () => {
-const [state, setState] = React.useState({ value: null });
-  const handleChange = value => {
-    setState({ value });
-  };
+const NoteInput = ({togglesShowCreateFolder}) => {
+
+
+    // #Quill Editor
+    const [state, setState] = useState({ value: null });
+    const handleChange = value => {
+        setState({ value });
+    };
     const getContent = () => {
         console.log(state)
     }
-
     const modules = {
         toolbar: [
             [{ font: [] }],
@@ -32,8 +34,10 @@ const [state, setState] = React.useState({ value: null });
         <>
             <div className="input-header">
                 <input type="text" placeholder='Title' />
-                <div className="folder">
-                    <FolderIcon />
+                <div className="folder" onClick={
+                    () => togglesShowCreateFolder()
+                }>
+                    <FolderIcon sx={{fontSize:'1rem'}}/>
                     <h4>Folders</h4>
                 </div>
                 <div className="date">
@@ -49,6 +53,7 @@ const [state, setState] = React.useState({ value: null });
                     onChange={handleChange}
                     placeholder={"Write something awesome..."}
                     modules={modules}
+                    styles={false}
                 />
             </div>
             <div className="input-btns">
