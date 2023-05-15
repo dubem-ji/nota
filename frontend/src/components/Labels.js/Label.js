@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Label = () => {
+const Label = ({tag}) => {
     return (
         <div className='label'>
-            <h5>School</h5>
+            <h5>{ tag}</h5>
         </div>
     );
 };
