@@ -1,8 +1,9 @@
 import React from 'react';
 import Sidebar from './Sidebar';
 import Notes from '../Notes/Notes';
+import NoteInput from '../Notes/NoteInput';
 
-const Main = ({showNotes, toggleShowNotes, showFolder, toggleShowFolder, showRecent, toggleShowRecent, showNoteInput, toggleShowNoteInput, togglesShowConfirm}) => {
+const Main = ({showNotes, toggleShowNotes, showFolder, toggleShowFolder, showRecent, toggleShowRecent, showNoteInput, toggleShowNoteInput, togglesShowConfirm, notesData}) => {
     
     return (
         <div className='main'>
@@ -11,7 +12,7 @@ const Main = ({showNotes, toggleShowNotes, showFolder, toggleShowFolder, showRec
             </div>
             {showNotes && (
                 <div className="all-notes">
-                    <Notes toggleShowNoteInput={toggleShowNoteInput} togglesShowConfirm={ togglesShowConfirm} />
+                    <Notes toggleShowNoteInput={toggleShowNoteInput} togglesShowConfirm={ togglesShowConfirm} notesData={notesData} />
                 </div>
             )}
              {showFolder && (
@@ -25,8 +26,8 @@ const Main = ({showNotes, toggleShowNotes, showFolder, toggleShowFolder, showRec
                 </div>
             )}
             {showNoteInput && (
-                <div className="all-notes">
-                    <h3>Edit note here</h3>
+                <div className="note-input">
+                    <NoteInput />
                 </div>
             )}
         </div>
