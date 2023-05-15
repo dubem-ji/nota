@@ -1,8 +1,9 @@
 import React, {useState} from "react";
+import { notes } from "./Data/Data";
 import Header from "./components/header";
 import Main from "./components/Main/Main";
 import Confirm from "./components/Confirmation/Confirm";
-import { notes } from "./Data/Data";
+import Createfolder from "./components/Folders/createfolder";
 
 function App() {
     const [showNotes, setShowNotes] = useState(true);
@@ -10,6 +11,7 @@ function App() {
     const [showRecent, setShowRecent] = useState(false);
     const [showNoteInput, setShowNoteInput] = useState(false);
     const [showConfirm, setShowConfirm] = useState(false);
+    const [showCreateFolder, setShowCreateFolder] = useState(false);
     const [notesData, setNotesData] = useState(notes);
 
     // #Toggle App Sections
@@ -39,8 +41,10 @@ function App() {
     };
     const togglesShowConfirm = () => {
         setShowConfirm(!showConfirm)
-    }
-    
+    };
+    const togglesShowCreateFolder = () => {
+        setShowCreateFolder(!showCreateFolder)
+    };
 
     // #Delete note
     const deleteNote = (currentId) => {
@@ -52,9 +56,12 @@ function App() {
             {showConfirm && (
                 <Confirm togglesShowConfirm={togglesShowConfirm} />
             )}
+            {showCreateFolder && (
+                <Createfolder togglesShowCreateFolder={togglesShowCreateFolder} />
+            )}
             
             <Header toggleShowNoteInput={toggleShowNoteInput} />
-            <Main showNotes={showNotes} toggleShowNotes={toggleShowNotes} showFolder={showFolder} toggleShowFolder={toggleShowFolder} showRecent={showRecent} toggleShowRecent={toggleShowRecent} showNoteInput={showNoteInput} toggleShowNoteInput={toggleShowNoteInput} togglesShowConfirm={ togglesShowConfirm} notesData={notesData} />
+            <Main showNotes={showNotes} toggleShowNotes={toggleShowNotes} showFolder={showFolder} toggleShowFolder={toggleShowFolder} showRecent={showRecent} toggleShowRecent={toggleShowRecent} showNoteInput={showNoteInput} toggleShowNoteInput={toggleShowNoteInput} togglesShowConfirm={ togglesShowConfirm} notesData={notesData} togglesShowCreateFolder={togglesShowCreateFolder } />
         </div>
     );
 };
