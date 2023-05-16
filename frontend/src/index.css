@@ -491,4 +491,12 @@ ul li{
         grid-template-columns: 100%;
         row-gap: 15px;
     }
+
+    .main .note-input .input-header input {
+        padding: 0.5rem;
+        width: 15rem;
+        background: var(--color-black-variant-2);
+        color: var(--color-white);
+        border: none;
+    }
 }
