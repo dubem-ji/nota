@@ -5,8 +5,12 @@ import FolderIcon from '@mui/icons-material/Folder';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const Note = ({ toggleShowNoteInput, togglesShowConfirm, note }) => {
-  const tags  = note.tags
+const Note = ({ toggleShowNoteInput, deleteNote, note }) => {
+  const tags = note.tags
+
+  const handleDelete = () => {
+    deleteNote(note.id)
+  }
 
   return (
     <div className='note'>
@@ -17,33 +21,33 @@ const Note = ({ toggleShowNoteInput, togglesShowConfirm, note }) => {
         </div>
         <div className="tags">
           {tags.map((tag) => [
-            <Label key={tag.indexOf()} tag={ tag} />
+            <Label key={tag.indexOf()} tag={tag} />
           ])}
         </div>
         <div className="content">
-          <p>{note.body }</p>
+          {note.body.value}
         </div>
       </div>
       <div className="note-icon">
         <div className="note-folder">
-          <FolderIcon sx={{fontSize:'1rem'}} />
+          <FolderIcon sx={{ fontSize: '1rem' }} />
           <h5>{note.folder}</h5>
         </div>
         <div className="note-btns">
           <div onClick={
             () => toggleShowNoteInput()
           }>
-            <BorderColorIcon sx={{fontSize:'1rem', cursor: 'pointer'}}/>
+            <BorderColorIcon sx={{ fontSize: '1rem', cursor: 'pointer' }} />
           </div>
           <div onClick={
-            () => togglesShowConfirm()
+            () => handleDelete()
           }>
-            <DeleteIcon sx={{fontSize:'1rem', cursor: 'pointer'}}/>
+            <DeleteIcon sx={{ fontSize: '1rem', cursor: 'pointer' }} />
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Note;

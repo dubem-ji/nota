@@ -4,31 +4,34 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
 
-const NoteInput = ({togglesShowCreateFolder}) => {
+const NoteInput = ({ togglesShowCreateFolder }) => {
+    const [title, setTitle] = useState(''); 
+    const [body, setBody] = useState(<></>);
+    const [date, setDate] = useState();
+    const [folder, setFolder] = useState('');
+    const [tags, setTags] = useState([]);
 
-
+    
     // #Quill Editor
     const [state, setState] = useState({ value: null });
     const handleChange = value => {
         setState({ value });
     };
     const getContent = () => {
-        console.log(state)
+        console.log(state.value)
     }
     const modules = {
         toolbar: [
             [{ font: [] }],
-            [{ header: [1, 2, 3, 4, 5, 6, false] }],
-            ["bold", "italic", "underline", "strike"],
-            [{ color: [] }, { background: [] }],
+            ["bold", "italic", "underline", "strike", { color: [] }],
             [{ script: "sub" }, { script: "super" }],
-            ["blockquote", "code-block"],
             [{ list: "ordered" }, { list: "bullet" }],
-            [{ indent: "-1" }, { indent: "+1" }, { align: [] }],
-            ["link", "image", "video"],
-            ["clean"],
+            [{ align: [] }],
+            ["link"],
         ],
     }
+
+    
 
     return (
         <>
@@ -57,20 +60,20 @@ const NoteInput = ({togglesShowCreateFolder}) => {
                 />
             </div>
             <div className="input-btns">
-                <div className="">
-
-                </div>
-                <div className="">
-                    <div className="click" onClick={
+                <div className="btn-icons">
+                    <div className="save" onClick={
                         () => getContent()
                     }>
                         <h4>save</h4>
                     </div>
-                    <div className="click" onClick={
+                    <div className="discard" onClick={
                         () => getContent()
                     }>
                         <h4>discard</h4>
                     </div>
+                </div>
+                  <div className="">
+
                 </div>
             </div>
         </>

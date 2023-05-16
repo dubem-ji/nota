@@ -1,8 +1,11 @@
 import React from 'react'
 
-const Confirm = ({ togglesShowConfirm }) => {
+const Confirm = ({ togglesShowConfirm, confirmOption }) => {
 
-
+    const handleConfirm = (option) => {
+        confirmOption(option);
+        togglesShowConfirm();
+    }
 
   return (
       <div className='confirm'>
@@ -10,12 +13,12 @@ const Confirm = ({ togglesShowConfirm }) => {
               <h4>Are you sure?</h4>
               <div className="options">
                   <div className="yes" onClick={
-                      () => togglesShowConfirm()
+                      () => handleConfirm(true)
                   }>
                       <h4>Yes</h4>
                   </div>
                   <div className="no" onClick={
-                      () => togglesShowConfirm()
+                      () => handleConfirm(false)
                   }>
                       <h4>No</h4>
                   </div>

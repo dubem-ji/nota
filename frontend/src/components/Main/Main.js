@@ -4,7 +4,7 @@ import Notes from '../Notes/Notes';
 import NoteInput from '../Notes/NoteInput';
 
 
-const Main = ({showNotes, toggleShowNotes, showFolder, toggleShowFolder, showRecent, toggleShowRecent, showNoteInput, toggleShowNoteInput, togglesShowConfirm, togglesShowCreateFolder, notesData}) => {
+const Main = ({showNotes, toggleShowNotes, showFolder, toggleShowFolder, showRecent, toggleShowRecent, showNoteInput, toggleShowNoteInput, togglesShowCreateFolder, deleteNote, addNote, notesData}) => {
     
     return (
         <div className='main'>
@@ -13,7 +13,7 @@ const Main = ({showNotes, toggleShowNotes, showFolder, toggleShowFolder, showRec
             </div>
             {showNotes && (
                 <div className="all-notes">
-                    <Notes toggleShowNoteInput={toggleShowNoteInput} togglesShowConfirm={ togglesShowConfirm} notesData={notesData} />
+                    <Notes toggleShowNoteInput={toggleShowNoteInput} notesData={notesData} deleteNote={ deleteNote} />
                 </div>
             )}
              {showFolder && (

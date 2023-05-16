@@ -26,6 +26,19 @@
 
     --box-shadow: 0 2rem 3rem var(--color-light);
 }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--color-black);
+    color: var(--color-white-variant);
+}
+
 h1 {
     font-size: 1.5rem;
     font-weight: 500;
@@ -47,24 +60,22 @@ h5 {
     font-weight: 500;
 }
 p {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     font-weight: 500;
 }
 .hide{
     display: none;
 }
-
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+ul{
+    padding-left: 2rem;
+}
+ul li{
+    font-size: 0.7rem;
+}
+.ql-align-right{
+    text-align: right;
 }
 
-body {
-    font-family: 'Montserrat', sans-serif;
-    background: var(--color-black);
-    color: var(--color-white-variant);
-}
 
 /* #App */
 .app {
@@ -277,6 +288,10 @@ body {
     background: #060606;
     color: var(--color-white-variant-2);
 }
+.main .all-notes .note .note-content .content{
+    height: 80px;
+    overflow: hidden;
+}
 .main .all-notes .note .note-icon{
     display: flex;
     align-items: center;
@@ -372,7 +387,28 @@ body {
     background: var(--color-white-variant);
     cursor: pointer;
 }
-
+.main .note-input .input-btns{
+    display: flex;
+    justify-content: space-between;
+}
+.main .note-input .input-btns .btn-icons{
+    display: flex;
+    gap: 1rem;
+}
+.main .note-input .input-btns .btn-icons .save h4{
+    padding: 0.3rem 0.5rem;
+    background: var(--color-success);
+    border-radius: var(--borer-radius-1);
+    color: var(--color-white);
+    cursor: pointer;
+}
+.main .note-input .input-btns .btn-icons .discard h4{
+    padding: 0.3rem 0.5rem;
+    background: var(--color-danger);
+    border-radius: var(--borer-radius-1);
+    color: var(--color-white);
+    cursor: pointer;
+}
 
 /* #Media Query */
 @media only screen and (max-width: 1300px) {
