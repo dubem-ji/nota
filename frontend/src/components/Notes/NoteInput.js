@@ -5,11 +5,11 @@ import 'react-quill/dist/quill.snow.css';
 
 
 const NoteInput = ({ togglesShowCreateFolder }) => {
-    const [title, setTitle] = useState(''); 
-    const [body, setBody] = useState(<></>);
-    const [date, setDate] = useState();
-    const [folder, setFolder] = useState('');
-    const [tags, setTags] = useState([]);
+    // const [title, setTitle] = useState(''); 
+    // const [body, setBody] = useState(<></>);
+    // const [date, setDate] = useState();
+    // const [folder, setFolder] = useState('');
+    // const [tags, setTags] = useState([]);
 
     
     // #Quill Editor
