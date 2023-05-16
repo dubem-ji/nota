@@ -35,8 +35,6 @@ const notes = [
 
 const user = {
     name: 'John Doe',
-    email: 'john@gmail.com',
-    password: 'john123',
     avatar: '',
     folders: [
         {

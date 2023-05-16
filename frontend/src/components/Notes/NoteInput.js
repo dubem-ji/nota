@@ -5,21 +5,25 @@ import 'react-quill/dist/quill.snow.css';
 
 
 const NoteInput = ({ togglesShowCreateFolder }) => {
-    // const [title, setTitle] = useState(''); 
+    const [title, setTitle] = useState('');
     // const [body, setBody] = useState(<></>);
     // const [date, setDate] = useState();
     // const [folder, setFolder] = useState('');
     // const [tags, setTags] = useState([]);
 
+    const saveContent = () => {
+        console.log(title)
+    };
+    const discardContent = () => {
+        console.log(state.value)
+    };
     
     // #Quill Editor
     const [state, setState] = useState({ value: null });
     const handleChange = value => {
         setState({ value });
     };
-    const getContent = () => {
-        console.log(state.value)
-    }
+
     const modules = {
         toolbar: [
             [{ font: [] }],
@@ -36,7 +40,7 @@ const NoteInput = ({ togglesShowCreateFolder }) => {
     return (
         <>
             <div className="input-header">
-                <input type="text" placeholder='Title' />
+                <input type="text" placeholder='Title' value={title} onChange={(e) => setTitle(e.target.value)}/>
                 <div className="folder" onClick={
                     () => togglesShowCreateFolder()
                 }>
@@ -62,12 +66,12 @@ const NoteInput = ({ togglesShowCreateFolder }) => {
             <div className="input-btns">
                 <div className="btn-icons">
                     <div className="save" onClick={
-                        () => getContent()
+                        () => saveContent()
                     }>
                         <h4>save</h4>
                     </div>
                     <div className="discard" onClick={
-                        () => getContent()
+                        () => discardContent()
                     }>
                         <h4>discard</h4>
                     </div>
