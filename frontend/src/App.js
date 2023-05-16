@@ -63,6 +63,7 @@ function App() {
     // #Delete note
     const deleteNote = (currentId) => {
         // togglesShowConfirm();
+        setConfirm(!confirm)
         if (window.confirm('Are you sure?')) {
             setNotesData(notesData.filter((note) => note.id !== currentId))
         }
