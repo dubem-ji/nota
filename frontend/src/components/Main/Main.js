@@ -1,10 +1,12 @@
 import React from 'react';
 import Sidebar from './Sidebar';
 import Notes from '../Notes/Notes';
+import FolderContents from '../Folders/FolderContents';
 import NoteInput from '../Notes/NoteInput';
+import Folders from '../Folders/Folders';
 
 
-const Main = ({showNotes, toggleShowNotes, showFolder, toggleShowFolder, showRecent, toggleShowRecent, showNoteInput, toggleShowNoteInput, togglesShowCreateFolder, deleteNote, addNote, notesData}) => {
+const Main = ({ showNotes, toggleShowNotes, showFolder, toggleShowFolder, toggleShowRecent, showNoteInput, toggleShowNoteInput, togglesShowCreateFolder, deleteNote, addNote, notesData, userData, openFolderContent, showFolderContent, currentFolder, editUserData }) => {
     
     return (
         <div className='main'>
@@ -13,17 +15,17 @@ const Main = ({showNotes, toggleShowNotes, showFolder, toggleShowFolder, showRec
             </div>
             {showNotes && (
                 <div className="all-notes">
-                    <Notes toggleShowNoteInput={toggleShowNoteInput} notesData={notesData} deleteNote={ deleteNote} />
+                    <Notes toggleShowNoteInput={toggleShowNoteInput} notesData={notesData} deleteNote={deleteNote} userData={userData} openFolderContent={ openFolderContent} />
                 </div>
             )}
              {showFolder && (
-                <div className="all-notes">
-                    <h3>All folders</h3>
+                <div className="all-folders">
+                    <Folders userData={userData} openFolderContent={openFolderContent} />
                 </div>
             )}
-             {showRecent && (
-                <div className="all-notes">
-                    <h3>Recent</h3>
+            {showFolderContent && (
+                <div className="folders-notes">
+                    <FolderContents toggleShowNoteInput={toggleShowNoteInput} notesData={notesData} deleteNote={ deleteNote} currentFolder={currentFolder} userData={userData} openFolderContent={openFolderContent} />
                 </div>
             )}
             {showNoteInput && (
