@@ -1,7 +1,7 @@
 import React from 'react';
 import Createnote from './Notes/createnote';
 
-const Header = ({ toggleShowNoteInput }) => {
+const Header = ({ toggleShowNoteInput, userData }) => {
     return (
         <header className='header'>
             <div className="container">
@@ -19,7 +19,7 @@ const Header = ({ toggleShowNoteInput }) => {
 
                         </div>
                         <div className="name">
-                            <h4>Dubem</h4>
+                            <h4>{userData.name}</h4>
                         </div>
                     </div>
                 </div>
