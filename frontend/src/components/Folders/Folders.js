@@ -1,11 +1,17 @@
-import React from 'react'
+import React from 'react';
+import FolderItem from './FolderItem';
 
-const Folders = () => {
+const Folders = ({ userData, openFolderContent }) => {
+  const folders = userData.folders;
+
+
   return (
-      <div>
-          
-    </div>
-  )
-}
+    <>
+      {folders.map((folder) => {
+        return <FolderItem folder={folder} key={folder.id} openFolderContent={ openFolderContent} />
+      })}
+    </>
+  );
+};
 
 export default Folders;
