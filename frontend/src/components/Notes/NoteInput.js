@@ -27,7 +27,7 @@ const NoteInput = ({ togglesShowCreateFolder }) => {
     const modules = {
         toolbar: [
             [{ font: [] }],
-            ["bold", "italic", "underline", "strike", { color: [] }],
+            ["bold", "italic", "underline", "strike"],
             [{ script: "sub" }, { script: "super" }],
             [{ list: "ordered" }, { list: "bullet" }],
             [{ align: [] }],
