@@ -6,14 +6,36 @@ import 'react-quill/dist/quill.snow.css';
 
 const NoteInput = ({ togglesShowCreateFolder }) => {
     const [title, setTitle] = useState('');
-    // const [body, setBody] = useState(<></>);
-    // const [date, setDate] = useState();
+    const [body, setBody] = useState({ value: `` });
+    const [date, setDate] = useState();
     // const [folder, setFolder] = useState('');
-    // const [tags, setTags] = useState([]);
 
     const saveContent = () => {
-        console.log(title)
+        if (state.value !== null) {
+            setBody(body.value = `<>${state.value}</>`);
+        }
+
+        let newDate = `${new Date().getFullYear()}` + `-` + `${new Date().getMonth()}` + `-` + `${new Date().getDay()}`
+        
+        setDate(newDate)
+
+        let data = {
+            id: 2,
+            title: title,
+            body: {
+                value: body.value
+            },
+            date: date,
+            folder: 'school'
+        }
+
+        console.log(body.value);
+        console.log(title);
+        setBody({ value: `` });
+        console.log(date);
+        console.log(data);
     };
+
     const discardContent = () => {
         console.log(state.value)
     };
