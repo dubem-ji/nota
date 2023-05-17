@@ -1,16 +1,31 @@
-import React from 'react';
-import Label from '../Labels.js/Label';
-
+import React, { useEffect, useState } from 'react';
 import FolderIcon from '@mui/icons-material/Folder';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const Note = ({ toggleShowNoteInput, deleteNote, note }) => {
-  const tags = note.tags
+const Note = ({ toggleShowNoteInput, deleteNote, note, userData, openFolderContent }) => {
+  const [assignedColor, setAssignedColor] = useState('');
+
+  const handleOpen = () => {
+    openFolderContent(note.folder);
+  };
 
   const handleDelete = () => {
     deleteNote(note.id)
   }
+
+  const getFolderColor = () => {
+    userData.folders.map((folder) => {
+      if (folder.name === note.folder) {
+        setAssignedColor(folder.color); 
+      } 
+      return ''
+    })
+  };
+
+  useEffect(() => {
+    getFolderColor();
+  });
 
   return (
     <div className='note'>
@@ -19,17 +34,14 @@ const Note = ({ toggleShowNoteInput, deleteNote, note }) => {
           <h5>{note.date}</h5>
           <h4>{note.title}</h4>
         </div>
-        <div className="tags">
-          {tags.map((tag) => [
-            <Label key={tag.indexOf()} tag={tag} />
-          ])}
-        </div>
         <div className="content">
           {note.body.value}
         </div>
       </div>
       <div className="note-icon">
-        <div className="note-folder">
+        <div className="note-folder" style={{ color: `${assignedColor}` }} onClick={
+          () => handleOpen()
+        }>
           <FolderIcon sx={{ fontSize: '1rem' }} />
           <h5>{note.folder}</h5>
         </div>
