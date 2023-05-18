@@ -15,7 +15,7 @@ const NoteInput = ({ togglesShowCreateFolder }) => {
             setBody(body.value = `<>${state.value}</>`);
         }
 
-        let newDate = `${new Date().getFullYear()}` + `-` + `${new Date().getMonth()}` + `-` + `${new Date().getDay()}`
+        let newDate = new Date().getFullYear() + '-' + new Date().getMonth() + '-' + new Date().getDay();
         
         setDate(newDate)
 
@@ -82,7 +82,8 @@ const NoteInput = ({ togglesShowCreateFolder }) => {
                     onChange={handleChange}
                     placeholder={"Write something awesome..."}
                     modules={modules}
-                    styles={false}
+                    // styles={false}
+                    style={{background: '#979797'}}
                 />
             </div>
             <div className="input-btns">

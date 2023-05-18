@@ -8,7 +8,7 @@ const Folders = ({ userData, openFolderContent }) => {
   return (
     <>
       {folders.map((folder) => {
-        return <FolderItem folder={folder} key={folder.id} openFolderContent={ openFolderContent} />
+        return <FolderItem folder={folder} key={folder.id} openFolderContent={ openFolderContent} iconSize={'5rem'} />
       })}
     </>
   );

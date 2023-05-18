@@ -39,12 +39,18 @@ const Note = ({ toggleShowNoteInput, deleteNote, note, userData, openFolderConte
         </div>
       </div>
       <div className="note-icon">
-        <div className="note-folder" style={{ color: `${assignedColor}` }} onClick={
-          () => handleOpen()
-        }>
-          <FolderIcon sx={{ fontSize: '1rem' }} />
-          <h5>{note.folder}</h5>
-        </div>
+        {note.folder.length !== 0 ? (
+          <div className="note-folder" style={{ color: `${assignedColor}` }} onClick={
+            () => handleOpen()
+          }>
+            <FolderIcon sx={{ fontSize: '1rem' }} />
+            <h5>{note.folder}</h5>
+          </div>
+        ) : (
+          <div>
+          
+          </div>
+        )}
         <div className="note-btns">
           <div onClick={
             () => toggleShowNoteInput()
