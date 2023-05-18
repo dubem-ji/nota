@@ -84,7 +84,7 @@ function App() {
                 <Confirm togglesShowConfirm={togglesShowConfirm} confirmOption={confirmOption} />
             )}
             {showCreateFolder && (
-                <Createfolder togglesShowCreateFolder={togglesShowCreateFolder} />
+                <Createfolder togglesShowCreateFolder={togglesShowCreateFolder} userData={userData} />
             )}
             
             <Header toggleShowNoteInput={toggleShowNoteInput} userData={ userData} />
