@@ -15,7 +15,7 @@ const notes = [
             value: <><p><span >The code snippet can be used to get the first 10 words from a string.</span></p><ul><li>You can set </li><li>'getWordStr'</li></ul><p><strong>You can set start</strong></p></>
         },
         date: '2015-05-03',
-        folder: 'school'
+        folder: ''
     },
     {
         id: 3,
@@ -76,6 +76,11 @@ const user = {
         },
         {
             id: 3,
+            name: 'work',
+            color: 'crimson',
+        },
+         {
+            id: 4,
             name: 'work',
             color: 'crimson',
         },
