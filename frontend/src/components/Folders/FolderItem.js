@@ -8,7 +8,7 @@ const FolderItem = ({ folder, openFolderContent, iconSize }) => {
 
 
     return (
-        <div className='folder-item' onClick={
+        <div draggable={true} className='folder-item' onClick={
           () => handleOpen()
         }>
             <div style={{ color: `${folder.color}` }}><FolderIcon sx={{fontSize: `${iconSize}`, cursor: 'pointer'}} /></div>
