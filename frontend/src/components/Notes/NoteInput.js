@@ -4,11 +4,11 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
 
-const NoteInput = ({ togglesShowCreateFolder }) => {
+const NoteInput = ({ togglesShowCreateFolder, folderSelection }) => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState({ value: `` });
     const [date, setDate] = useState();
-    // const [folder, setFolder] = useState('');
+    const [folder, setFolder] = useState(folderSelection);
 
     const saveContent = () => {
         if (state.value !== null) {
@@ -76,14 +76,12 @@ const NoteInput = ({ togglesShowCreateFolder }) => {
             </div>
             <div className="input-text">
                 <ReactQuill
-                    className='quill'
                     theme="snow"
                     value={state.value}
                     onChange={handleChange}
                     placeholder={"Write something awesome..."}
                     modules={modules}
-                    // styles={false}
-                    style={{background: '#979797'}}
+                    style={{ background: '#979797', color: 'black' }}
                 />
             </div>
             <div className="input-btns">

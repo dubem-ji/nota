@@ -81,8 +81,8 @@ const user = {
         },
          {
             id: 4,
-            name: 'work',
-            color: 'crimson',
+            name: 'physics',
+            color: 'navy',
         },
     ],
 }

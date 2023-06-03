@@ -6,7 +6,7 @@ import NoteInput from '../Notes/NoteInput';
 import Folders from '../Folders/Folders';
 
 
-const Main = ({ showNotes, toggleShowNotes, showFolder, toggleShowFolder, toggleShowRecent, showNoteInput, toggleShowNoteInput, togglesShowCreateFolder, deleteNote, addNote, notesData, userData, openFolderContent, showFolderContent, currentFolder, editUserData }) => {
+const Main = ({ showNotes, toggleShowNotes, showFolder, toggleShowFolder, toggleShowRecent, showNoteInput, toggleShowNoteInput, togglesShowCreateFolder, deleteNote, addNote, notesData, userData, openFolderContent, showFolderContent, currentFolder, editUserData, folderSelection }) => {
     
     return (
         <div className='main'>
@@ -15,7 +15,7 @@ const Main = ({ showNotes, toggleShowNotes, showFolder, toggleShowFolder, toggle
             </div>
             {showNotes && (
                 <div className="all-notes">
-                    <Notes toggleShowNoteInput={toggleShowNoteInput} notesData={notesData} deleteNote={deleteNote} userData={userData} openFolderContent={ openFolderContent} />
+                    <Notes toggleShowNoteInput={toggleShowNoteInput} notesData={notesData} deleteNote={deleteNote} userData={userData} openFolderContent={openFolderContent}/>
                 </div>
             )}
              {showFolder && (
@@ -30,7 +30,7 @@ const Main = ({ showNotes, toggleShowNotes, showFolder, toggleShowFolder, toggle
             )}
             {showNoteInput && (
                 <div className="note-input">
-                    <NoteInput togglesShowCreateFolder={togglesShowCreateFolder} />
+                    <NoteInput togglesShowCreateFolder={togglesShowCreateFolder} folderSelection={folderSelection} />
                 </div>
             )}
         </div>
