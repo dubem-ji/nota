@@ -15,7 +15,8 @@ function App() {
     const [notesData, setNotesData] = useState(notes);
     const [userData, setUserData] = useState(user);
     const [showFolderContent, setShowFolderContent] = useState(false);
-    const [currentFolder, setCurrentFolder] = useState(''); 
+    const [currentFolder, setCurrentFolder] = useState('');
+    const [folderSelection, setFolderSelection] = useState('');
 
     // #Toggle App Sections
     const toggleShowNotes = () => {
@@ -74,21 +75,26 @@ function App() {
     };
 
     // #Edit User Data
-    const editUserData = () => [
-        setUserData(userData)
-    ]
+    const editUserData = (object) => {
+        setUserData(object)
+    }
+
+    // #Get selected folder;
+    const getFolderSelection = (folderName) => {
+        setFolderSelection(folderName)
+    }
 
     return (
         <div className="app">
+            <Header toggleShowNoteInput={toggleShowNoteInput} userData={ userData} />
+            <Main showNotes={showNotes} toggleShowNotes={toggleShowNotes} showFolder={showFolder} toggleShowFolder={toggleShowFolder} showNoteInput={showNoteInput} toggleShowNoteInput={toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm} notesData={notesData} togglesShowCreateFolder={togglesShowCreateFolder} deleteNote={deleteNote} addNote={addNote} userData={userData} openFolderContent={openFolderContent} showFolderContent={showFolderContent} currentFolder={currentFolder} editUserData={editUserData} folderSelection={folderSelection} />
+            
             {showConfirm && (
                 <Confirm togglesShowConfirm={togglesShowConfirm} confirmOption={confirmOption} />
             )}
             {showCreateFolder && (
-                <Createfolder togglesShowCreateFolder={togglesShowCreateFolder} userData={userData} />
+                <Createfolder togglesShowCreateFolder={togglesShowCreateFolder} userData={userData} editUserData={editUserData} openFolderContent={openFolderContent} getFolderSelection={getFolderSelection} />
             )}
-            
-            <Header toggleShowNoteInput={toggleShowNoteInput} userData={ userData} />
-            <Main showNotes={showNotes} toggleShowNotes={toggleShowNotes} showFolder={showFolder} toggleShowFolder={toggleShowFolder} showNoteInput={showNoteInput} toggleShowNoteInput={toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm} notesData={notesData} togglesShowCreateFolder={togglesShowCreateFolder} deleteNote={deleteNote} addNote={addNote} userData={userData} openFolderContent={openFolderContent} showFolderContent={showFolderContent} currentFolder={currentFolder} editUserData={ editUserData} />
         </div>
     );
 };
