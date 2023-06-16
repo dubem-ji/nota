@@ -3,7 +3,7 @@ import FolderIcon from '@mui/icons-material/Folder';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const Note = ({ toggleShowNoteInput, deleteNote, note, userData, openFolderContent}) => {
+const Note = ({ toggleShowNoteInput, deleteNote, note, userData, openFolderContent, getNoteInputData}) => {
   const [assignedColor, setAssignedColor] = useState('');
 
   const handleOpen = () => {
@@ -53,7 +53,10 @@ const Note = ({ toggleShowNoteInput, deleteNote, note, userData, openFolderConte
         )}
         <div className="note-btns">
           <div onClick={
-            () => toggleShowNoteInput()
+            () => {
+              getNoteInputData(note);
+              toggleShowNoteInput()
+            }
           }>
             <BorderColorIcon sx={{ fontSize: '1rem', cursor: 'pointer' }} />
           </div>
