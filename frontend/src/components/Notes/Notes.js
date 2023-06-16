@@ -1,7 +1,7 @@
 import React from 'react';
 import Note from './note';
 
-const Notes = ({toggleShowNoteInput, deleteNote, notesData, userData, openFolderContent}) => {
+const Notes = ({toggleShowNoteInput, deleteNote, notesData, userData, openFolderContent, getNoteInputData}) => {
 
     if (!notesData || notesData.length === 0) {
         return <p>No Notes</p>
@@ -10,7 +10,7 @@ const Notes = ({toggleShowNoteInput, deleteNote, notesData, userData, openFolder
         <>
             {
                 notesData.map((note) => {
-                    return <Note key={note.id} toggleShowNoteInput={toggleShowNoteInput} note={note} deleteNote={deleteNote} userData={userData} openFolderContent={ openFolderContent} />
+                    return <Note key={note.id} toggleShowNoteInput={toggleShowNoteInput} note={note} deleteNote={deleteNote} userData={userData} openFolderContent={ openFolderContent} getNoteInputData={getNoteInputData} />
                 })
             }
         </>
