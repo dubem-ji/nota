@@ -83,10 +83,8 @@ const folders = [
 ]
 
 const user = {
-    name: 'John Doe',
-    username: '',
+    username: 'Johnny',
     password: '',
-    avatar: '',
 }
 
 export { notes, folders, user };
