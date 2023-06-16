@@ -17,6 +17,7 @@ function App() {
     const [showFolderContent, setShowFolderContent] = useState(false);
     const [currentFolder, setCurrentFolder] = useState('');
     const [folderSelection, setFolderSelection] = useState('');
+    const [noteInputData, setNoteInputData] = useState();
 
     // #Toggle App Sections
     const toggleShowNotes = () => {
@@ -60,6 +61,7 @@ function App() {
             setConfirm(false)
         }
     }
+
     // #Add note
     const addNote = (noteObject) => {
         console.log(noteObject)
@@ -84,10 +86,16 @@ function App() {
         setFolderSelection(folderName)
     }
 
+    // #Get Note input data
+    const getNoteInputData = (data) => {
+        setNoteInputData(data);
+        // console.log(noteInputData);
+    }
+
     return (
         <div className="app">
             <Header toggleShowNoteInput={toggleShowNoteInput} userData={ userData} />
-            <Main showNotes={showNotes} toggleShowNotes={toggleShowNotes} showFolder={showFolder} toggleShowFolder={toggleShowFolder} showNoteInput={showNoteInput} toggleShowNoteInput={toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm} notesData={notesData} togglesShowCreateFolder={togglesShowCreateFolder} deleteNote={deleteNote} addNote={addNote} userData={userData} openFolderContent={openFolderContent} showFolderContent={showFolderContent} currentFolder={currentFolder} editUserData={editUserData} folderSelection={folderSelection} />
+            <Main showNotes={showNotes} toggleShowNotes={toggleShowNotes} showFolder={showFolder} toggleShowFolder={toggleShowFolder} showNoteInput={showNoteInput} toggleShowNoteInput={toggleShowNoteInput} togglesShowConfirm={togglesShowConfirm} notesData={notesData} togglesShowCreateFolder={togglesShowCreateFolder} deleteNote={deleteNote} addNote={addNote} userData={userData} openFolderContent={openFolderContent} showFolderContent={showFolderContent} currentFolder={currentFolder} editUserData={editUserData} folderSelection={folderSelection} noteInputData={noteInputData} getNoteInputData={ getNoteInputData} />
             
             {showConfirm && (
                 <Confirm togglesShowConfirm={togglesShowConfirm} confirmOption={confirmOption} />
