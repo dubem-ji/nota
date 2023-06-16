@@ -4,7 +4,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
 
-const NoteInput = ({ togglesShowCreateFolder, folderSelection, noteInputData }) => {
+const NoteInput = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState({ value: `` });
     const [date, setDate] = useState();
