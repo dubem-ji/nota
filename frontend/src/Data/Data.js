@@ -59,32 +59,34 @@ const notes = [
     },
 ];
 
+const folders = [
+    {
+        id: 1,
+        name: 'personal',
+        color: 'turquoise',
+    },
+    {
+        id: 2,
+        name: 'school',
+        color: 'chartreuse',
+    },
+    {
+        id: 3,
+        name: 'work',
+        color: 'crimson',
+    },
+    {
+        id: 4,
+        name: 'physics',
+        color: 'navy',
+    },
+]
 
 const user = {
     name: 'John Doe',
+    username: '',
+    password: '',
     avatar: '',
-    folders: [
-        {
-            id: 1,
-            name: 'personal',
-            color: 'turquoise',
-        },
-        {
-            id: 2,
-            name: 'school',
-            color: 'chartreuse',
-        },
-        {
-            id: 3,
-            name: 'work',
-            color: 'crimson',
-        },
-         {
-            id: 4,
-            name: 'physics',
-            color: 'navy',
-        },
-    ],
 }
 
-export { notes, user };
+export { notes, folders, user };
