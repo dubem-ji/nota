@@ -4,7 +4,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
 
-const NoteInput = ({ togglesShowCreateFolder, folderSelection }) => {
+const NoteInput = ({ togglesShowCreateFolder, folderSelection, noteInputData }) => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState({ value: `` });
     const [date, setDate] = useState();
@@ -38,10 +38,13 @@ const NoteInput = ({ togglesShowCreateFolder, folderSelection }) => {
 
     const discardContent = () => {
         console.log(state.value)
+        console.log(noteInputData);
     };
     
     // #Quill Editor
-    const [state, setState] = useState({ value: null });
+    const textValue = noteInputData.body.value.props
+    console.log(textValue)
+    const [state, setState] = useState({ value: textValue });
     const handleChange = value => {
         setState({ value });
     };
@@ -66,12 +69,12 @@ const NoteInput = ({ togglesShowCreateFolder, folderSelection }) => {
                 <div className="folder" onClick={
                     () => togglesShowCreateFolder()
                 }>
-                    <FolderIcon sx={{fontSize:'1rem'}}/>
-                    <h4>Folders</h4>
+                    <FolderIcon sx={{ fontSize: '1rem' }} />
+                    <h4>{ noteInputData.folder}</h4>
                 </div>
                 <div className="date">
                     <h5>Last modified: 2 Apr 2023, 17:06</h5>
-                    <h5>Created: 28 Mar 2022</h5>
+                    <h5>Created: { noteInputData.date}</h5>
                 </div>
             </div>
             <div className="input-text">
