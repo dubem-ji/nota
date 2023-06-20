@@ -1,10 +1,12 @@
 import React from 'react';
-import AllNotes from './AllNotes';
+import AllNotes from './AllNotes/AllNotes';
+import FullNote from './Note/FullNote';
 
 const NotesMain = () => {
     return (
         <div className="notes-main">
-          <AllNotes />
+        <AllNotes />
+        <FullNote />
         </div>
     )
 };
