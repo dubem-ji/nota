@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react';
-import { notes } from "../Data/Data";
+import { notes } from "../data/Data";
 
 const NoteContext = createContext();
 
