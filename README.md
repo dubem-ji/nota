@@ -1,4 +1,4 @@
 # nota
 
-A basic CRUD App with Javascript
-Matrialize CSS for styling
+A basic CRUD Note Editing App with Javascript
+Materialize CSS for styling with jquery dependency
